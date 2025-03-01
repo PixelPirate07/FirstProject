@@ -29,3 +29,12 @@ class HelloControllerMarkParams {
         return "Hello " + name + " from BridgeLabz";
     }
 }
+@RestController
+@RequestMapping("/hello")
+class HelloControllerPost {
+
+    @PostMapping("/post")
+    public String sayHelloWithPost(@RequestBody UserDTO user) {
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
+    }
+}
